@@ -1,0 +1,108 @@
+units:
+  kx: u
+  ky: u
+  px: u + 2
+  py: u + 2
+
+points:
+  zones:
+    matrix:
+      anchor:
+        shift: [70,-140]
+      columns:
+        outer:
+          rows:
+            mod:
+              skip: true
+        pinky:
+          rows.mod.skip: true
+        ring:
+          key:
+            stagger: 12
+          rows.mod.skip: true
+        middle:
+          key:
+            stagger: 8
+        index:
+          key:
+            stagger: -5
+        inner:
+          key:
+            stagger: -3
+      rows:
+        bottom:
+        home:
+        top:
+    thumbs:
+      key:
+        padding: 1kx
+        spread: 1kx 
+      anchor:
+        ref: matrix_pinky_bottom
+        shift: [38, -8]
+      columns:
+        alt: 
+        super:
+        layer:
+          key:
+            splay: -20
+            rotate:
+            spread: 1.2kx
+            shift: [0,-4]
+        space:
+          key:
+            splay: -95
+            shift: [5,1.5]
+            width: 1.25kx
+      rows:
+        cluster:
+  mirror: &mirror
+    ref: matrix_inner_top
+    distance: 4kx
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [1.2px, 1.2py]
+      fillet: 2
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [1kx, 1ky]
+  combo:
+  - name: raw
+  - operation: subtract
+    name: keys
+pcbs:
+  SebCorne:
+    outlines:
+      main:
+        outline: raw
+    footprints:
+      # Hotswap Choc keys.
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+footprints:
+  choc_hotswap:
+    what: choc
+    where: true
+    params:
+      keycaps: true
+      reverse: false
+      hotswap: true
+      from: "{{column_net}}"
+      to: "{{colrow}}"
+  diode:
+        what: sod-123w
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
