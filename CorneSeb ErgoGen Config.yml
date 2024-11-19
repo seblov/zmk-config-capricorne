@@ -18,11 +18,9 @@ points:
             mod:
               skip: true
         pinky:
-          rows.mod.skip: true
         ring:
           key:
             stagger: 12
-          rows.mod.skip: true
         middle:
           key:
             stagger: 8
@@ -59,14 +57,14 @@ points:
             width: 1.25kx
       rows:
         cluster:
-  mirror: &mirror
-    ref: matrix_inner_top
-    distance: 4kx
+#  mirror: &mirror
+#    ref: matrix_inner_top
+#    distance: 4kx
 outlines:
   raw:
     - what: rectangle
       where: true
-      size: [1.2px, 1.2py]
+      size: [1.5px, 1.2py]
       fillet: 2
   keys:
     - what: rectangle
@@ -99,13 +97,16 @@ pcbs:
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
-          side: "b"
+#          side: "b"
         adjust:
           shift: [0, -5]
-      nice_nano:
+      nice_nano_l:
         what: ceoloide/mcu_nice_nano
         params:
           side: "f"
+          reverse_mount: true
+        adjust:
+          shift: [186,-95]
       battery_connector:
         what: ceoloide/battery_connector_jst_ph_2
         params:
