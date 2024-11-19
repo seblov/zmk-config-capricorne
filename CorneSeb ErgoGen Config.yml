@@ -1,3 +1,6 @@
+# use https://ergogen.ceoloide.com/ which includes more footprints
+
+
 units:
   kx: u
   ky: u
@@ -90,19 +93,20 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
-footprints:
-  choc_hotswap:
-    what: choc
-    where: true
-    params:
-      keycaps: true
-      reverse: false
-      hotswap: true
-      from: "{{column_net}}"
-      to: "{{colrow}}"
-  diode:
-        what: sod-123w
+      diode:
+        what: ceoloide/diode_tht_sod123
         where: true
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
+          side: "b"
+        adjust:
+          shift: [0, -5]
+      nice_nano:
+        what: ceoloide/mcu_nice_nano
+        params:
+          side: "f"
+      battery_connector:
+        what: ceoloide/battery_connector_jst_ph_2
+        params:
+          side: "f"
