@@ -72,19 +72,25 @@ outlines:
       - ref: matrix_ring_top
         shift: [-.5px,0.5py]
       - ref: matrix_middle_top
+        shift: [-.5px,.13py]
+      - ref: matrix_middle_top
         shift: [-0.5px,0.5py]
       - ref: matrix_index_top
-        shift: [-0.5px,0.75py]
+        shift: [-0.4px,0.75py]
+      - ref: matrix_index_top
+        shift: [-.4px,0.5py]
       - ref: matrix_inner_top
-        shift: [1.8px, .9py]
+        shift: [-.4px, .65py]
+      - ref: matrix_inner_top
+        shift: [-.4px, .5py]
+      - ref: matrix_inner_top
+        shift: [1.8px, .5py]
       - ref: matrix_inner_home
         shift: [1.8px,-.4py]
       - ref: matrix_inner_home
         shift: [.8px,-1.8py]
       - ref: matrix_inner_bottom
         shift: [1.55px, -1.25py]
-      #- ref: thumbs_space_cluster
-      #  shift: [.2px, 1py]
       - ref: thumbs_layer_cluster
         shift: [1.4px, -.6py]
       - ref: thumbs_super_cluster
@@ -92,9 +98,13 @@ outlines:
       - ref: thumbs_super_cluster
         shift: [.45px,-.5py]
       - ref: matrix_ring_bottom
-        shift: [0.3px,-1.45py]
+        shift: [0.32px,-1.45py]
+      - ref: matrix_ring_bottom
+        shift: [.3px,-.5py]
+      - ref: matrix_ring_bottom
+        shift: [-.4px,-.5py]
       - ref: matrix_pinky_bottom
-        shift: [1px,-0.5py]
+        shift: [0.5px,-0.5py]
       - ref: matrix_outer_bottom
         shift: [-0.5px,-0.5py]
       fillet: 2
