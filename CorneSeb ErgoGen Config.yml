@@ -88,6 +88,8 @@ outlines:
       - ref: thumbs_layer_cluster
         shift: [1.4px, -.6py]
       - ref: thumbs_super_cluster
+        shift: [1.25px,-.8py]
+      - ref: thumbs_super_cluster
         shift: [.45px,-.5py]
       - ref: matrix_ring_bottom
         shift: [0.3px,-1.45py]
