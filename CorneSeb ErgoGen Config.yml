@@ -56,9 +56,9 @@ points:
             width: 1.25kx
       rows:
         cluster:
-  mirror: &mirror
-    ref: matrix_inner_top
-    distance: 4kx
+  #mirror: &mirror
+  #  ref: matrix_inner_top
+  #  distance: 4kx
 outlines:
   board:
     - what: polygon
@@ -126,7 +126,7 @@ pcbs:
   SebCorne:
     outlines:
       main:
-        outline: raw
+        outline: board
     footprints:
       # Hotswap Choc keys.
       choc_hotswap:
@@ -151,6 +151,9 @@ pcbs:
         what: ceoloide/mcu_nice_nano
         params:
           side: "f"
+        where:
+          ref.aggregate.parts: [matrix_inner_top]
+          shift: [21, -8]
       battery_connector:
         what: ceoloide/battery_connector_jst_ph_2
         params:
