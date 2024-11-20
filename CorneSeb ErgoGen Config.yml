@@ -83,9 +83,9 @@ outlines:
       - ref: matrix_inner_top
         shift: [-.4px, .5py]
       - ref: matrix_inner_top
-        shift: [1.8px, .5py]
+        shift: [1.5px, .5py]
       - ref: matrix_inner_home
-        shift: [1.8px,-.4py]
+        shift: [1.5px,-.4py]
       - ref: matrix_inner_home
         shift: [.8px,-1.8py]
       - ref: matrix_inner_bottom
@@ -144,7 +144,7 @@ pcbs:
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
-          side: "b"
+        #  side: "b"
         adjust:
           shift: [0, -5]
       nice_nano:
@@ -158,3 +158,4 @@ pcbs:
         what: ceoloide/battery_connector_jst_ph_2
         params:
           side: "f"
+
