@@ -40,7 +40,7 @@ points:
         spread: 1kx 
       anchor:
         ref: matrix_pinky_bottom
-        shift: [38, -8]
+        shift: [36, -8]
       columns:
         alt: 
         super:
@@ -57,14 +57,50 @@ points:
             width: 1.25kx
       rows:
         cluster:
-#  mirror: &mirror
-#    ref: matrix_inner_top
-#    distance: 4kx
+  mirror: &mirror
+    ref: matrix_inner_top
+    distance: 4kx
 outlines:
+  board:
+    - what: polygon
+      operation: stack
+      points:
+      - ref: matrix_outer_top
+        shift: [-0.5px,0.5py]
+      - ref: matrix_pinky_top
+        shift: [0.4px,0.5py]
+      - ref: matrix_ring_top
+        shift: [-.5px,0.5py]
+      - ref: matrix_middle_top
+        shift: [-0.5px,0.5py]
+      - ref: matrix_index_top
+        shift: [-0.5px,0.75py]
+      - ref: matrix_inner_top
+        shift: [1.8px, .9py]
+      - ref: matrix_inner_home
+        shift: [1.8px,-.4py]
+      - ref: matrix_inner_home
+        shift: [.8px,-1.8py]
+      - ref: matrix_inner_bottom
+        shift: [1.55px, -1.25py]
+      #- ref: thumbs_space_cluster
+      #  shift: [.2px, 1py]
+      - ref: thumbs_layer_cluster
+        shift: [1.4px, -.6py]
+      - ref: thumbs_super_cluster
+        shift: [.45px,-.5py]
+      - ref: matrix_ring_bottom
+        shift: [0.3px,-1.45py]
+      - ref: matrix_pinky_bottom
+        shift: [1px,-0.5py]
+      - ref: matrix_outer_bottom
+        shift: [-0.5px,-0.5py]
+      fillet: 2
+
   raw:
     - what: rectangle
       where: true
-      size: [1.5px, 1.2py]
+      size: [1.2px, 1.2py]
       fillet: 2
   keys:
     - what: rectangle
@@ -72,7 +108,7 @@ outlines:
       bound: false
       size: [1kx, 1ky]
   combo:
-  - name: raw
+  - name: board
   - operation: subtract
     name: keys
 pcbs:
@@ -97,16 +133,13 @@ pcbs:
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
-#          side: "b"
+          side: "b"
         adjust:
           shift: [0, -5]
-      nice_nano_l:
+      nice_nano:
         what: ceoloide/mcu_nice_nano
         params:
           side: "f"
-          reverse_mount: true
-        adjust:
-          shift: [186,-95]
       battery_connector:
         what: ceoloide/battery_connector_jst_ph_2
         params:
