@@ -8,7 +8,7 @@ points:
   zones:
     matrix:
       anchor:
-        shift: [70,-140]
+        shift: [75,-150]
       columns:
         outer:
           key.column_net: P1
@@ -65,11 +65,11 @@ points:
       rows:
         cluster:
           row_net: P9
-  #mirror: &mirror
-  #  ref: matrix_inner_top
-  #  distance: 4kx
+  mirror: &mirror
+    ref: matrix_inner_top
+    distance: 4kx
 outlines:
-  board:
+  board_left:
     - what: polygon
       operation: stack
       points:
@@ -116,7 +116,53 @@ outlines:
       - ref: matrix_outer_bottom
         shift: [-0.5px,-0.5py]
       fillet: 2
-
+  board_right:
+    - what: polygon
+      operation: stack
+      points:
+      - ref: mirror_matrix_outer_top
+        shift: [-0.5px,0.5py]
+      - ref: mirror_matrix_pinky_top
+        shift: [0.4px,0.5py]
+      - ref: mirror_matrix_ring_top
+        shift: [-.5px,0.5py]
+      - ref: mirror_matrix_middle_top
+        shift: [-.5px,.13py]
+      - ref: mirror_matrix_middle_top
+        shift: [-0.5px,0.5py]
+      - ref: mirror_matrix_index_top
+        shift: [-0.4px,0.75py]
+      - ref: mirror_matrix_index_top
+        shift: [-.4px,0.5py]
+      - ref: mirror_matrix_inner_top
+        shift: [-.4px, .65py]
+      - ref: mirror_matrix_inner_top
+        shift: [-.4px, .5py]
+      - ref: mirror_matrix_inner_top
+        shift: [1.5px, .5py]
+      - ref: mirror_matrix_inner_home
+        shift: [1.5px,-.4py]
+      - ref: mirror_matrix_inner_home
+        shift: [.8px,-1.8py]
+      - ref: mirror_matrix_inner_bottom
+        shift: [1.55px, -1.25py]
+      - ref: mirror_thumbs_layer_cluster
+        shift: [1.4px, -.6py]
+      - ref: mirror_thumbs_super_cluster
+        shift: [1.25px,-.8py]
+      - ref: mirror_thumbs_super_cluster
+        shift: [.45px,-.5py]
+      - ref: mirror_matrix_ring_bottom
+        shift: [0.32px,-1.45py]
+      - ref: mirror_matrix_ring_bottom
+        shift: [.3px,-.5py]
+      - ref: mirror_matrix_ring_bottom
+        shift: [-.4px,-.5py]
+      - ref: mirror_matrix_pinky_bottom
+        shift: [0.5px,-0.5py]
+      - ref: mirror_matrix_outer_bottom
+        shift: [-0.5px,-0.5py]
+      fillet: 2
   raw:
     - what: rectangle
       where: true
@@ -128,14 +174,18 @@ outlines:
       bound: false
       size: [1kx, 1ky]
   combo:
-  - name: board
+  - name: board_left
+  - name: board_right
   - operation: subtract
     name: keys
+  pcb_outline:
+  - name: board_left
+  - name: board_right
 pcbs:
-  SebCorne:
+  CapriCorne:
     outlines:
       main:
-        outline: board
+        outline: pcb_outline
     footprints:
       # Hotswap Choc keys.
       choc_hotswap:
@@ -155,29 +205,59 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
-      nice_nano:
+      nice_nano_left:
         what: ceoloide/mcu_nice_nano
         params:
           side: "f"
+          reverse_mount: true
         where:
           ref.aggregate.parts: [matrix_inner_top]
           shift: [21, -8]
-      battery_connector:
+      nice_nano_right:
+        what: ceoloide/mcu_nice_nano
+        params:
+          side: "f"
+          reverse_mount: true
+        where:
+          ref.aggregate.parts: [mirror_matrix_inner_top]
+          shift: [-21, -8]
+      battery_connector_left:
         what: ceoloide/battery_connector_jst_ph_2
         params:
         #  BAT_P: 'RAW'
         where:
           ref.aggregate.parts: [matrix_inner_home]
           shift: [20,-10]
-      power_switch:
+          rotate: 153
+      power_switch_left:
         what: infused-kim/switch_power
         where:
           ref.aggregate.parts: [matrix_inner_bottom]
           shift: [16,-13]
           rotate: -27
-      reset_switch:
+      reset_switch_left:
         what: ceoloide/reset_switch_tht_top
         where:
           ref.aggregate.parts: [matrix_inner_bottom]
           shift: [21, -4.5]
           rotate: 63
+      battery_connector_right:
+        what: ceoloide/battery_connector_jst_ph_2
+        params:
+        #  BAT_P: 'RAW'
+        where:
+          ref.aggregate.parts: [mirror_matrix_inner_home]
+          shift: [-20,-10]
+          rotate: -153
+      power_switch_right:
+        what: infused-kim/switch_power
+        where:
+          ref.aggregate.parts: [mirror_matrix_inner_bottom]
+          shift: [-16,-13]
+          rotate: 27
+      reset_switch_right:
+        what: ceoloide/reset_switch_tht_top
+        where:
+          ref.aggregate.parts: [mirror_matrix_inner_bottom]
+          shift: [-21, -4.5]
+          rotate: -63
