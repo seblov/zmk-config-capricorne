@@ -165,7 +165,19 @@ pcbs:
       battery_connector:
         what: ceoloide/battery_connector_jst_ph_2
         params:
-          BAT_P: 'RAW'
+        #  BAT_P: 'RAW'
         where:
           ref.aggregate.parts: [matrix_inner_home]
           shift: [20,-10]
+      power_switch:
+        what: infused-kim/switch_power
+        where:
+          ref.aggregate.parts: [matrix_inner_bottom]
+          shift: [16,-13]
+          rotate: -27
+      reset_switch:
+        what: ceoloide/reset_switch_tht_top
+        where:
+          ref.aggregate.parts: [matrix_inner_bottom]
+          shift: [21, -4.5]
+          rotate: 63
