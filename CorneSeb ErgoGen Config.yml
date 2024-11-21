@@ -1,10 +1,10 @@
 # use https://ergogen.ceoloide.com/ which includes more footprints
 
 units:
-  kx: u
-  ky: u
-  px: u + 2
-  py: u + 2
+  kx: U
+  ky: U
+  px: U + 2
+  py: U + 2
 
 points:
   zones:
@@ -13,23 +13,32 @@ points:
         shift: [70,-140]
       columns:
         outer:
+          key.column_net: P1
         pinky:
+          key.column_net: P0
         ring:
           key:
             stagger: 12
+          key.column_net: P2
         middle:
           key:
             stagger: 8
+          key.column_net: P3
         index:
           key:
             stagger: -5
+          key.column_net: P4
         inner:
           key:
             stagger: -3
+          key.column_net: P5
       rows:
         bottom:
+          row_net: P8
         home:
+          row_net: P7
         top:
+          row_net: P6
     thumbs:
       key:
         padding: 1kx
@@ -38,21 +47,26 @@ points:
         ref: matrix_pinky_bottom
         shift: [36, -8]
       columns:
-        alt: 
+        alt:
+          key.column_net: P2
         super:
+          key.column_net: P3
         layer:
           key:
             splay: -20
             rotate:
             spread: 1.2kx
             shift: [0,-4]
+          key.column_net: P4
         space:
           key:
             splay: -95
             shift: [5,1.5]
             width: 1.25kx
+          key.column_net: P5
       rows:
         cluster:
+          row_net: P9
   #mirror: &mirror
   #  ref: matrix_inner_top
   #  distance: 4kx
@@ -153,6 +167,7 @@ pcbs:
       battery_connector:
         what: ceoloide/battery_connector_jst_ph_2
         params:
+          BAT_P: 'RAW'
         where:
           ref.aggregate.parts: [matrix_inner_home]
           shift: [20,-10]
