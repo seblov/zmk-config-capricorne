@@ -1,0 +1,10 @@
+#include "capricorne.dtsi"
+
+&default_kscan {
+    col-gpios = <&pro_micro * GPIO_ACTIVE_HIGH>,
+                <&pro_micro * GPIO_ACTIVE_HIGH>,
+                <&pro_micro * GPIO_ACTIVE_HIGH>,
+                <&pro_micro * GPIO_ACTIVE_HIGH>,
+                <&pro_micro * GPIO_ACTIVE_HIGH>,
+                <&pro_micro * GPIO_ACTIVE_HIGH>;
+};
