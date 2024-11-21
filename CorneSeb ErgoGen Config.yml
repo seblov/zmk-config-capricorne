@@ -13,9 +13,6 @@ points:
         shift: [70,-140]
       columns:
         outer:
-          rows:
-            mod:
-              skip: true
         pinky:
         ring:
           key:
@@ -157,5 +154,5 @@ pcbs:
         what: ceoloide/battery_connector_jst_ph_2
         params:
         where:
-          ref.aggregate.parts: [matrix_inner_bottom]
-
+          ref.aggregate.parts: [matrix_inner_home]
+          shift: [20,-10]
