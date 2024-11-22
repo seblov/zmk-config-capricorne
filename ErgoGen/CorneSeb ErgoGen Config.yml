@@ -209,7 +209,7 @@ pcbs:
           shift: [0, -5]
 
       nice_nano_left:
-        what: ceoloide/mcu_supermini_nrf52840.js
+        what: ceoloide/mcu_nice_nano
         params:
           side: "f"
           reverse_mount: true
@@ -433,3 +433,12 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_thumbs_layer_cluster]
           shift: [-10.7, 8]
+
+      qi_charger_right:
+        what: ceoloide/battery_connector_jst_ph_2
+        params:
+        #  BAT_P: 'RAW'
+        where:
+          ref.aggregate.parts: [mirror_matrix_inner_home]
+          shift: [-16,-19]
+          rotate: -153
