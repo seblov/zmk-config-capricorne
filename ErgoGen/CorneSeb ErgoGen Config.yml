@@ -65,11 +65,8 @@ points:
       rows:
         cluster:
           row_net: P9
-  mirror: &mirror
-    ref: matrix_inner_top
-    distance: 4kx
 outlines:
-  board_left:
+  board:
     - what: polygon
       operation: stack
       points:
@@ -116,53 +113,6 @@ outlines:
       - ref: matrix_outer_bottom
         shift: [-0.5px,-0.5py]
       fillet: 2
-  board_right:
-    - what: polygon
-      operation: stack
-      points:
-      - ref: mirror_matrix_outer_top
-        shift: [-0.5px,0.5py]
-      - ref: mirror_matrix_pinky_top
-        shift: [0.4px,0.5py]
-      - ref: mirror_matrix_ring_top
-        shift: [-.5px,0.5py]
-      - ref: mirror_matrix_middle_top
-        shift: [-.5px,.13py]
-      - ref: mirror_matrix_middle_top
-        shift: [-0.5px,0.5py]
-      - ref: mirror_matrix_index_top
-        shift: [-0.4px,0.75py]
-      - ref: mirror_matrix_index_top
-        shift: [-.4px,0.5py]
-      - ref: mirror_matrix_inner_top
-        shift: [-.4px, .65py]
-      - ref: mirror_matrix_inner_top
-        shift: [-.4px, .5py]
-      - ref: mirror_matrix_inner_top
-        shift: [1.5px, .5py]
-      - ref: mirror_matrix_inner_home
-        shift: [1.5px,-.4py]
-      - ref: mirror_matrix_inner_home
-        shift: [.8px,-1.8py]
-      - ref: mirror_matrix_inner_bottom
-        shift: [1.55px, -1.25py]
-      - ref: mirror_thumbs_layer_cluster
-        shift: [1.4px, -.6py]
-      - ref: mirror_thumbs_super_cluster
-        shift: [1.25px,-.8py]
-      - ref: mirror_thumbs_super_cluster
-        shift: [.45px,-.5py]
-      - ref: mirror_matrix_ring_bottom
-        shift: [0.32px,-1.45py]
-      - ref: mirror_matrix_ring_bottom
-        shift: [.3px,-.5py]
-      - ref: mirror_matrix_ring_bottom
-        shift: [-.4px,-.5py]
-      - ref: mirror_matrix_pinky_bottom
-        shift: [0.5px,-0.5py]
-      - ref: mirror_matrix_outer_bottom
-        shift: [-0.5px,-0.5py]
-      fillet: 2
   raw:
     - what: rectangle
       where: true
@@ -174,105 +124,82 @@ outlines:
       bound: false
       size: [1kx, 1ky]
   combo:
-  - name: board_left
-  - name: board_right
+  - name: board
   - operation: subtract
     name: keys
   pcb_outline:
-  - name: board_left
-  - name: board_right
+  - name: board
 
 pcbs:
   CapriCorne:
+    template: kicad8
     outlines:
       main:
         outline: pcb_outline
     footprints:
       # Hotswap Choc keys.
       choc_hotswap:
-        what: choc
+        what: ceoloide/switch_choc_v1_v2
         where: true
         params:
-          keycaps: true
-          reverse: false
+          include_keycap: true
+          reversible: true
           hotswap: true
+          choc_v2_support: false
           from: "{{column_net}}"
           to: "{{colrow}}"
 
-      diode:
+      diode_f:
         what: ceoloide/diode_tht_sod123
         where: true
         params:
           from: "{{colrow}}"
           to: "{{row_net}}"
+          reversible: true
+          include_tht: false
+          side: F
         adjust:
           shift: [0, -5]
+          rotate: 180
 
-      nice_nano_left:
+      nice_nano:
         what: ceoloide/mcu_nice_nano
         params:
-          side: "f"
+          side: F
           reverse_mount: true
+          reversible: true
+          only_required_jumpers: false
         where:
           ref.aggregate.parts: [matrix_inner_top]
-          shift: [21, -8]
+          shift: [21, -7.5]
 
-      nice_nano_right:
-        what: ceoloide/mcu_nice_nano
-        params:
-          side: "f"
-          reverse_mount: true
-        where:
-          ref.aggregate.parts: [mirror_matrix_inner_top]
-          shift: [-21, -8]
-
-      battery_connector_left:
+      battery_connector:
         what: ceoloide/battery_connector_jst_ph_2
         params:
         #  BAT_P: 'RAW'
+          reversible: true
         where:
           ref.aggregate.parts: [matrix_inner_home]
           shift: [16,-19]
           rotate: 153
 
-      power_switch_left:
-        what: infused-kim/switch_power
+      power_switch:
+        what: ceoloide/power_switch_smd_side
+        params:
+          reversible: true
         where:
           ref.aggregate.parts: [matrix_inner_bottom]
-          shift: [16,-13]
+          shift: [17.75,-12]
           rotate: -27
 
-      reset_switch_left:
+      reset_switch:
         what: ceoloide/reset_switch_tht_top
         where:
           ref.aggregate.parts: [matrix_inner_bottom]
-          shift: [21, -4.5]
+          shift: [22.5, -2]
           rotate: 63
 
-      battery_connector_right:
-        what: ceoloide/battery_connector_jst_ph_2
-        params:
-        #  BAT_P: 'RAW'
-        where:
-          ref.aggregate.parts: [mirror_matrix_inner_home]
-          shift: [-16,-19]
-          rotate: -153
-
-      power_switch_right:
-        what: infused-kim/switch_power
-        where:
-          ref.aggregate.parts: [mirror_matrix_inner_bottom]
-          shift: [-16,-13]
-          rotate: -153
-
-      reset_switch_right:
-        what: ceoloide/reset_switch_tht_top
-        where:
-          ref.aggregate.parts: [mirror_matrix_inner_bottom]
-          shift: [-21, -4.5]
-          rotate: -63
-
-      battery_wires_left:
+      battery_wires:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '4'
@@ -281,16 +208,7 @@ pcbs:
           ref.aggregate.parts: [matrix_inner_home]
           shift: [21,-9]
 
-      battery_wires_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '4'
-          hole_drill: '4'
-        where:
-          ref.aggregate.parts: [mirror_matrix_inner_home]
-          shift: [-21,-9]
-
-      mounting_upper_outer_left:
+      mounting_upper_outer:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -299,7 +217,7 @@ pcbs:
           ref.aggregate.parts: [matrix_outer_top]
           shift: [9.5, -9.5]
 
-      mounting_bottom_outer_left:
+      mounting_bottom_outer:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -308,7 +226,7 @@ pcbs:
           ref.aggregate.parts: [matrix_outer_home]
           shift: [9.5, -9.5]
 
-      mounting_bottom_ring_left:
+      mounting_bottom_ring:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -317,7 +235,7 @@ pcbs:
           ref.aggregate.parts: [matrix_pinky_home]
           shift: [9.5, -9.5]
       
-      mounting_top_ring_left:
+      mounting_top_ring:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -326,7 +244,7 @@ pcbs:
           ref.aggregate.parts: [matrix_pinky_top]
           shift: [9.5, -9.5]
       
-      mounting_top_index_left:
+      mounting_top_index:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -335,7 +253,7 @@ pcbs:
           ref.aggregate.parts: [matrix_index_top]
           shift: [9.5, -9.5]
       
-      mounting_bottom_middle_left:
+      mounting_bottom_middle:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -344,7 +262,7 @@ pcbs:
           ref.aggregate.parts: [matrix_middle_bottom]
           shift: [0, -14]
 
-      mounting_top_middle_left:
+      mounting_top_middle:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -353,7 +271,7 @@ pcbs:
           ref.aggregate.parts: [matrix_middle_top]
           shift: [9.5, -9.5]
       
-      mounting_bottom_space_left:
+      mounting_bottom_space:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
@@ -361,84 +279,3 @@ pcbs:
         where:
           ref.aggregate.parts: [thumbs_layer_cluster]
           shift: [10.7, 8]
-
-      mounting_upper_outer_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_matrix_outer_top]
-          shift: [-9.5, -9.5]
-
-      mounting_bottom_outer_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_matrix_outer_home]
-          shift: [-9.5, -9.5]
-
-      mounting_bottom_ring_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_matrix_pinky_home]
-          shift: [-9.5, -9.5]
-      
-      mounting_top_ring_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_matrix_pinky_top]
-          shift: [-9.5, -9.5]
-      
-      mounting_top_index_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_matrix_index_top]
-          shift: [-9.5, -9.5]
-      
-      mounting_bottom_middle_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_matrix_middle_bottom]
-          shift: [0, -14]
-
-      mounting_top_middle_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_matrix_middle_top]
-          shift: [-9.5, -9.5]
-      
-      mounting_bottom_space_right:
-        what: ceoloide/mounting_hole_npth
-        params:
-          hole_size: '3'
-          hole_drill: '3'
-        where:
-          ref.aggregate.parts: [mirror_thumbs_layer_cluster]
-          shift: [-10.7, 8]
-
-      qi_charger_right:
-        what: ceoloide/battery_connector_jst_ph_2
-        params:
-        #  BAT_P: 'RAW'
-        where:
-          ref.aggregate.parts: [mirror_matrix_inner_home]
-          shift: [-16,-19]
-          rotate: -153
