@@ -181,6 +181,7 @@ outlines:
   pcb_outline:
   - name: board_left
   - name: board_right
+
 pcbs:
   CapriCorne:
     outlines:
@@ -197,6 +198,7 @@ pcbs:
           hotswap: true
           from: "{{column_net}}"
           to: "{{colrow}}"
+
       diode:
         what: ceoloide/diode_tht_sod123
         where: true
@@ -205,6 +207,7 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -5]
+
       nice_nano_left:
         what: ceoloide/mcu_nice_nano
         params:
@@ -213,6 +216,7 @@ pcbs:
         where:
           ref.aggregate.parts: [matrix_inner_top]
           shift: [21, -8]
+
       nice_nano_right:
         what: ceoloide/mcu_nice_nano
         params:
@@ -221,43 +225,76 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_matrix_inner_top]
           shift: [-21, -8]
+
       battery_connector_left:
         what: ceoloide/battery_connector_jst_ph_2
         params:
         #  BAT_P: 'RAW'
         where:
           ref.aggregate.parts: [matrix_inner_home]
-          shift: [20,-10]
+          shift: [16,-19]
           rotate: 153
+
       power_switch_left:
         what: infused-kim/switch_power
         where:
           ref.aggregate.parts: [matrix_inner_bottom]
           shift: [16,-13]
           rotate: -27
+
       reset_switch_left:
         what: ceoloide/reset_switch_tht_top
         where:
           ref.aggregate.parts: [matrix_inner_bottom]
           shift: [21, -4.5]
           rotate: 63
+
       battery_connector_right:
         what: ceoloide/battery_connector_jst_ph_2
         params:
         #  BAT_P: 'RAW'
         where:
           ref.aggregate.parts: [mirror_matrix_inner_home]
-          shift: [-20,-10]
+          shift: [-16,-19]
           rotate: -153
+
       power_switch_right:
         what: infused-kim/switch_power
         where:
           ref.aggregate.parts: [mirror_matrix_inner_bottom]
           shift: [-16,-13]
           rotate: 27
+
       reset_switch_right:
         what: ceoloide/reset_switch_tht_top
         where:
           ref.aggregate.parts: [mirror_matrix_inner_bottom]
           shift: [-21, -4.5]
           rotate: -63
+
+      battery_wires_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '4'
+          hole_drill: '4'
+        where:
+          ref.aggregate.parts: [matrix_inner_home]
+          shift: [21,-9]
+
+      battery_wires_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '4'
+          hole_drill: '4'
+        where:
+          ref.aggregate.parts: [mirror_matrix_inner_home]
+          shift: [-21,-9]
+
+      mounting_upper_end_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [matrix_outer_top]
+          shift: [-10, 5]
