@@ -209,7 +209,7 @@ pcbs:
           shift: [0, -5]
 
       nice_nano_left:
-        what: ceoloide/mcu_nice_nano
+        what: ceoloide/mcu_supermini_nrf52840.js
         params:
           side: "f"
           reverse_mount: true
@@ -263,7 +263,7 @@ pcbs:
         where:
           ref.aggregate.parts: [mirror_matrix_inner_bottom]
           shift: [-16,-13]
-          rotate: 27
+          rotate: -153
 
       reset_switch_right:
         what: ceoloide/reset_switch_tht_top
@@ -290,11 +290,146 @@ pcbs:
           ref.aggregate.parts: [mirror_matrix_inner_home]
           shift: [-21,-9]
 
-      mounting_upper_end_left:
+      mounting_upper_outer_left:
         what: ceoloide/mounting_hole_npth
         params:
           hole_size: '3'
           hole_drill: '3'
         where:
           ref.aggregate.parts: [matrix_outer_top]
-          shift: [-10, 5]
+          shift: [9.5, -9.5]
+
+      mounting_bottom_outer_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [matrix_outer_home]
+          shift: [9.5, -9.5]
+
+      mounting_bottom_ring_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [matrix_pinky_home]
+          shift: [9.5, -9.5]
+      
+      mounting_top_ring_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [matrix_pinky_top]
+          shift: [9.5, -9.5]
+      
+      mounting_top_index_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [matrix_index_top]
+          shift: [9.5, -9.5]
+      
+      mounting_bottom_middle_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [matrix_middle_bottom]
+          shift: [0, -14]
+
+      mounting_top_middle_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [matrix_middle_top]
+          shift: [9.5, -9.5]
+      
+      mounting_bottom_space_left:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [thumbs_layer_cluster]
+          shift: [10.7, 8]
+
+      mounting_upper_outer_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_matrix_outer_top]
+          shift: [-9.5, -9.5]
+
+      mounting_bottom_outer_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_matrix_outer_home]
+          shift: [-9.5, -9.5]
+
+      mounting_bottom_ring_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_matrix_pinky_home]
+          shift: [-9.5, -9.5]
+      
+      mounting_top_ring_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_matrix_pinky_top]
+          shift: [-9.5, -9.5]
+      
+      mounting_top_index_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_matrix_index_top]
+          shift: [-9.5, -9.5]
+      
+      mounting_bottom_middle_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_matrix_middle_bottom]
+          shift: [0, -14]
+
+      mounting_top_middle_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_matrix_middle_top]
+          shift: [-9.5, -9.5]
+      
+      mounting_bottom_space_right:
+        what: ceoloide/mounting_hole_npth
+        params:
+          hole_size: '3'
+          hole_drill: '3'
+        where:
+          ref.aggregate.parts: [mirror_thumbs_layer_cluster]
+          shift: [-10.7, 8]
