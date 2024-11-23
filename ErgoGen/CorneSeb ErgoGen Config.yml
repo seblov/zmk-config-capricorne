@@ -66,6 +66,80 @@ points:
         cluster:
           row_net: P9
 outlines:
+
+  mt_hole_1:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: matrix_outer_top
+        shift: [9.5, -9.5]
+
+  mt_hole_2:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: matrix_outer_home
+        shift: [9.5, -9.5]
+  
+  mt_hole_3:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: matrix_pinky_home
+        shift: [9.5, -9.5]
+  
+  mt_hole_4:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: matrix_pinky_top
+        shift: [9.5, -9.5]
+  
+  mt_hole_5:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: matrix_middle_bottom
+        shift: [0, -14]
+  
+  mt_hole_6:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: matrix_middle_top
+        shift: [9.5, -9.5]
+
+  mt_hole_7:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: matrix_index_top
+        shift: [9.5, -9.5]
+
+  mt_hole_8:
+    - what: circle
+      radius: 3.4
+      operation: stack
+      where:
+      - ref: thumbs_layer_cluster
+        shift: [10.7, 8]
+
+  mt_hole_9:
+    - what: circle
+      radius: 4.5
+      operation: stack
+      where:
+      - ref: matrix_inner_home
+        shift: [21,-9]
+
+
   board:
     - what: polygon
       operation: stack
@@ -113,20 +187,43 @@ outlines:
       - ref: matrix_outer_bottom
         shift: [-0.5px,-0.5py]
       fillet: 2
+  
   raw:
     - what: rectangle
       where: true
       size: [1.2px, 1.2py]
       fillet: 2
+  
   keys:
     - what: rectangle
       where: true
       bound: false
-      size: [1kx, 1ky]
+      size: [1cx,1cy]
+  
+  keys_mt_hole:
+  - name: mt_hole_1
+  - name: mt_hole_2
+  - name: mt_hole_3
+  - name: mt_hole_4
+  - name: mt_hole_5
+  - name: mt_hole_6
+  - name: mt_hole_7
+  - name: mt_hole_8
+  - name: mt_hole_9
+  - operation: stack
+    name: keys
+
+  3d_plate:
+  - name: keys_mt_hole
+  - operation: stack
+    name: board
+
+
   combo:
   - name: board
   - operation: subtract
     name: keys
+  
   pcb_outline:
   - name: board
 
@@ -202,8 +299,8 @@ pcbs:
       battery_wires:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '4'
-          hole_drill: '4'
+          hole_size: '4.45'
+          hole_drill: '4.45'
         where:
           ref.aggregate.parts: [matrix_inner_home]
           shift: [21,-9]
@@ -211,8 +308,8 @@ pcbs:
       mounting_upper_outer:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [matrix_outer_top]
           shift: [9.5, -9.5]
@@ -220,8 +317,8 @@ pcbs:
       mounting_bottom_outer:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [matrix_outer_home]
           shift: [9.5, -9.5]
@@ -229,8 +326,8 @@ pcbs:
       mounting_bottom_ring:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [matrix_pinky_home]
           shift: [9.5, -9.5]
@@ -238,8 +335,8 @@ pcbs:
       mounting_top_ring:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [matrix_pinky_top]
           shift: [9.5, -9.5]
@@ -247,8 +344,8 @@ pcbs:
       mounting_top_index:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [matrix_index_top]
           shift: [9.5, -9.5]
@@ -256,8 +353,8 @@ pcbs:
       mounting_bottom_middle:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [matrix_middle_bottom]
           shift: [0, -14]
@@ -265,8 +362,8 @@ pcbs:
       mounting_top_middle:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [matrix_middle_top]
           shift: [9.5, -9.5]
@@ -274,8 +371,8 @@ pcbs:
       mounting_bottom_space:
         what: ceoloide/mounting_hole_npth
         params:
-          hole_size: '3'
-          hole_drill: '3'
+          hole_size: '3.4'
+          hole_drill: '3.4'
         where:
           ref.aggregate.parts: [thumbs_layer_cluster]
           shift: [10.7, 8]
