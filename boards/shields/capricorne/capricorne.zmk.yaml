@@ -1,0 +1,13 @@
+file_format: "1"
+id: capricorne
+name: CapriCorne
+type: shield
+url: https://github.com/seblov/zmk-config-capricorne
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - studio
+siblings:
+  - capricorne_left
+  - capricorne_right
