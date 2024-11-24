@@ -1,5 +1,5 @@
 config SHIELD_CAPRICORNE_LEFT
-    def_bool $(shields_list_contains,CapriCorne_left)
+    def_bool $(shields_list_contains,capricorne_left)
 
 config SHIELD_CAPRICORNE_RIGHT
-    def_bool $(shields_list_contains,CapriCorne_right)
+    def_bool $(shields_list_contains,capricorne_right)
