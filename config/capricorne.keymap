@@ -107,7 +107,7 @@
 &kp TAB           &kp NB_EXCL          &kp NB_DQT           &kp NB_POUND          &kp NB_DOLLAR            &kp NB_PERCENT              &kp NB_N7  &kp NB_N8  &kp NB_N9  &trans         &Hold_Tap_KP NB_PLUS NB_EQUAL  &kp DELETE
 &kp LEFT_SHIFT    &kp NB_AMPERSAND     &kp NB_SLASH         &kp NB_AT             &kp NB_LEFT_PARENTHESIS  &kp NB_RIGHT_PARENTHESIS    &kp NB_N4  &kp NB_N5  &kp NB_N6  &trans         &kp NB_UMLAUT                  &kp NB_BSLH
 &kp NB_LESS_THAN  &kp NB_GREATER_THAN  &kp NB_LEFT_BRACKET  &kp NB_RIGHT_BRACKET  &kp NB_LEFT_BRACE        &kp NB_RIGHT_BRACE          &kp NB_N1  &kp NB_N2  &kp NB_N3  &kp NB_PERIOD  &trans                         &trans
-                                                            &kp LGUI              &trans                   &kp SPACE                   &kp NB_N0  &trans     &trans
+                                       &none                &kp LGUI              &trans                   &kp SPACE                   &kp NB_N0  &trans     &trans     &none
             >;
         };
 
@@ -122,7 +122,7 @@
 &none   &kp F1  &kp F2      &kp F3             &kp F4            &kp F5       &kp F6   &kp F7          &kp F8    &kp F9     &kp F10          &kp F11
 &trans  &none   &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP   &none        &kp INS  &kp HOME        &kp UP    &kp END    &trans           &trans
 &none   &none   &kp C_PREV  &kp C_NEXT         &kp C_PLAY_PAUSE  &none        &kp F13  &kp LEFT_ARROW  &kp DOWN  &kp RIGHT  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)
-                            &kp LGUI           &trans            &kp SPACE    &kp RET  &trans          &trans
+                &none       &kp LGUI           &trans            &kp SPACE    &kp RET  &trans          &trans    &none
             >;
         };
 
@@ -131,7 +131,7 @@
 &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &openM2    &OpenO2    &trans  &trans  &trans  &trans
 &trans          &trans        &trans        &trans        &trans        &studio_unlock    &terminal  &Change_Q  &trans  &trans  &trans  &trans
 &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &Column_Search    &trans     &trans     &trans  &trans  &trans  &trans
-                                            &trans        &trans        &trans            &trans     &trans     &trans
+                              &trans        &trans        &trans        &trans            &trans     &trans     &trans  &trans
             >;
         };
     };
