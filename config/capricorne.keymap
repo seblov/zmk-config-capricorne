@@ -89,10 +89,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&Hold_Tap_KP TAB ESC  &kp Q                    &kp W  &kp E     &kp R  &kp T        &kp Y                     &kp U                        &kp I      &kp O    &kp P           &Hold_Tap_KP NB_QUESTION NB_A_RING
-&kp LEFT_SHIFT        &kp A                    &kp S  &kp D     &kp F  &kp G        &kp H                     &kp J                        &kp K      &kp L    &kp NB_O_SLASH  &kp NB_AE
-&kp LEFT_CONTROL      &Hold_Tap_KP LEFT_ALT Z  &kp X  &kp C     &kp V  &kp B        &kp N                     &kp M                        &kp COMMA  &kp DOT  &kp SLASH       &Hold_Tap_KP LS(NON_US_HASH) NON_US_HASH
-                                               &none  &kp LGUI  &mo 1  &kp SPACE    &Hold_Tap_KP LSHFT ENTER  &Layer_Hold_Tap 2 BACKSPACE  &mo 3      &none
+&Hold_Tap_KP TAB ESC  &kp Q                    &kp W         &kp E     &kp R  &kp T        &kp Y                     &kp U                        &kp I      &kp O    &kp P           &Hold_Tap_KP NB_QUESTION NB_A_RING
+&kp LEFT_SHIFT        &kp A                    &kp S         &kp D     &kp F  &kp G        &kp H                     &kp J                        &kp K      &kp L    &kp NB_O_SLASH  &kp NB_AE
+&kp LEFT_CONTROL      &Hold_Tap_KP LEFT_ALT Z  &kp X         &kp C     &kp V  &kp B        &kp N                     &kp M                        &kp COMMA  &kp DOT  &kp SLASH       &Hold_Tap_KP LS(NON_US_HASH) NON_US_HASH
+                                               &kp LEFT_ALT  &kp LGUI  &mo 1  &kp SPACE    &Hold_Tap_KP LSHFT ENTER  &Layer_Hold_Tap 2 BACKSPACE  &mo 3      &none
             >;
         };
 
@@ -106,7 +106,7 @@
             bindings = <
 &kp TAB           &kp NB_EXCL          &kp NB_DQT           &kp NB_POUND          &kp NB_DOLLAR            &kp NB_PERCENT              &kp NB_N7  &kp NB_N8  &kp NB_N9  &trans         &Hold_Tap_KP NB_PLUS NB_EQUAL  &kp DELETE
 &kp LEFT_SHIFT    &kp NB_AMPERSAND     &kp NB_SLASH         &kp NB_AT             &kp NB_LEFT_PARENTHESIS  &kp NB_RIGHT_PARENTHESIS    &kp NB_N4  &kp NB_N5  &kp NB_N6  &trans         &kp NB_UMLAUT                  &kp NB_BSLH
-&kp NB_LESS_THAN  &kp NB_GREATER_THAN  &kp NB_LEFT_BRACKET  &kp NB_RIGHT_BRACKET  &kp NB_LEFT_BRACE        &kp NB_RIGHT_BRACE          &kp NB_N1  &kp NB_N2  &kp NB_N3  &kp NB_PERIOD  &trans                         &trans
+&kp NB_LESS_THAN  &kp NB_GREATER_THAN  &kp NB_LEFT_BRACKET  &kp NB_RIGHT_BRACKET  &kp NB_LEFT_BRACE        &kp NB_RIGHT_BRACE          &kp NB_N1  &kp NB_N2  &kp NB_N3  &kp NB_PERIOD  &trans                         &kp NB_GRAVE
                                        &none                &kp LGUI              &trans                   &kp SPACE                   &kp NB_N0  &trans     &trans     &none
             >;
         };
