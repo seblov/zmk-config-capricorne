@@ -1,7 +1,6 @@
 #include "capricorne.dtsi"
 
-&default_transform {
-    col-offset = <6>;
+
 };
 
 &default_kscan {
