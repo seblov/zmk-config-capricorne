@@ -2,6 +2,7 @@
 
 &default_transform {
     col-offset = <6>;
+    };
 
 &default_kscan {
     col-gpios = <&pro_micro 5 GPIO_ACTIVE_HIGH>,
