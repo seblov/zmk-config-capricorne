@@ -34,3 +34,4 @@ Soldering iron and solder (required)
 Flux (recommended)
 Solder sucker / solder wick (recommended)
 
+Some build instructions and a link to a printable travel case will be added soon.
