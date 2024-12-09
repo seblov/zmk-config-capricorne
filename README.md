@@ -1,3 +1,6 @@
+
+![Full Front](https://github.com/user-attachments/assets/0660c87a-bf2b-4dc6-afbe-bb2616b98e58)
+
 About the board:
 
 I wanted a corne variant that had a dedicated key for alt on the left hand side, and a stagger that naturally fits your fingers when placed on the homerow.
