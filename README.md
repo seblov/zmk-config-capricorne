@@ -1,6 +1,9 @@
 
 ![Full Front](https://github.com/user-attachments/assets/0660c87a-bf2b-4dc6-afbe-bb2616b98e58)
 
+KeyCaps used in the pictures:
+https://www.printables.com/model/685983-kea-workshop-kea-mx-profile-choc-v1-mx-spaced-keyc
+
 About the board:
 
 I wanted a corne variant that had a dedicated key for alt on the left hand side, and a stagger that naturally fits your fingers when placed on the homerow.
