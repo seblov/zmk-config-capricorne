@@ -14,9 +14,16 @@ I bought some magsafe rings on AliExpress and attached them to the case, this al
 Bill of materials:
 
 2 x 450 mah batteries. AliExpresss link: https://shorturl.at/kehCG
+
 2 x NRF52840 microcontrollers. AliExpress link: https://shorturl.at/Ni0Im
+
 44 x Choc hotswap sockets. Aliexpress link: https://shorturl.at/NC2Pz
+
 44 x 1N4148W SOD123 Surface mount diodes. Aliexpress link: https://shorturl.at/2Hpfi
+
+2 x Power switches. Aliexpress link: https://shorturl.at/6m1Fo
+
+2 x Surface mount buttons (for reset). Aliexpress link: https://tinyurl.com/4kxsznbt (shorturl stopped working idk why).
 
 Other tools required or recommended:
 
