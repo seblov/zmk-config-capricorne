@@ -76,6 +76,13 @@
             bindings = <&kp LSHIFT &kp LEFT_ALT &kp NB_D>;
             label = "COLUMN_SEARCH";
         };
+
+        xml_formatting: xml_formatting {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp LEFT_SHIFT &kp LEFT_ALT &kp B>;
+            label = "XML_FORMATTING";
+        };
     };
 
     keymap {
@@ -89,10 +96,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&Hold_Tap_KP TAB ESC  &kp Q                    &kp W         &kp E     &kp R  &kp T        &kp Y                     &kp U                        &kp I      &kp O    &kp P           &Hold_Tap_KP NB_QUESTION NB_A_RING
-&kp LEFT_SHIFT        &kp A                    &kp S         &kp D     &kp F  &kp G        &kp H                     &kp J                        &kp K      &kp L    &kp NB_O_SLASH  &kp NB_AE
-&kp LEFT_CONTROL      &Hold_Tap_KP LEFT_ALT Z  &kp X         &kp C     &kp V  &kp B        &kp N                     &kp M                        &kp COMMA  &kp DOT  &kp SLASH       &Hold_Tap_KP LS(NON_US_HASH) NON_US_HASH
-                                               &kp LEFT_ALT  &kp LGUI  &mo 1  &kp SPACE    &Hold_Tap_KP LSHFT ENTER  &Layer_Hold_Tap 2 BACKSPACE  &mo 3      &none
+&Hold_Tap_KP TAB ESC  &kp Q  &kp W         &kp E     &kp R  &kp T        &kp Y                     &kp U                        &kp I      &kp O    &kp P           &Hold_Tap_KP NB_QUESTION NB_A_RING
+&kp LEFT_SHIFT        &kp A  &kp S         &kp D     &kp F  &kp G        &kp H                     &kp J                        &kp K      &kp L    &kp NB_O_SLASH  &kp NB_AE
+&kp LEFT_CONTROL      &kp Z  &kp X         &kp C     &kp V  &kp B        &kp N                     &kp M                        &kp COMMA  &kp DOT  &kp SLASH       &Hold_Tap_KP LS(NON_US_HASH) NON_US_HASH
+                             &kp LEFT_ALT  &kp LGUI  &mo 1  &kp SPACE    &Hold_Tap_KP LSHFT ENTER  &Layer_Hold_Tap 2 BACKSPACE  &mo 3      &none
             >;
         };
 
@@ -128,10 +135,10 @@
 
         BT_Layer {
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &openM2    &OpenO2    &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans        &studio_unlock    &terminal  &Change_Q  &trans  &trans  &trans  &trans
-&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &Column_Search    &trans     &trans     &trans  &trans  &trans  &trans
-                              &trans        &trans        &trans        &trans            &trans     &trans     &trans  &trans
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &openM2          &OpenO2    &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans        &studio_unlock    &terminal        &Change_Q  &trans  &trans  &trans  &trans
+&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &Column_Search    &xml_formatting  &trans     &trans  &trans  &trans  &trans
+                              &trans        &trans        &trans        &trans            &trans           &trans     &trans  &trans
             >;
         };
     };
