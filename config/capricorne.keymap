@@ -116,10 +116,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB           &kp NB_EXCL          &kp NB_DQT           &kp NB_POUND          &kp NB_DOLLAR            &kp NB_PERCENT              &kp NB_N7  &kp NB_N8  &kp NB_N9  &trans         &Hold_Tap_KP NB_PLUS NB_EQUAL  &kp DELETE
-&kp LEFT_SHIFT    &kp NB_AMPERSAND     &kp NB_SLASH         &kp NB_AT             &kp NB_LEFT_PARENTHESIS  &kp NB_RIGHT_PARENTHESIS    &kp NB_N4  &kp NB_N5  &kp NB_N6  &trans         &kp NB_UMLAUT                  &kp NB_BSLH
-&kp NB_LESS_THAN  &kp NB_GREATER_THAN  &kp NB_LEFT_BRACKET  &kp NB_RIGHT_BRACKET  &kp NB_LEFT_BRACE        &kp NB_RIGHT_BRACE          &kp NB_N1  &kp NB_N2  &kp NB_N3  &kp NB_PERIOD  &trans                         &kp NB_GRAVE
-                                       &none                &kp LGUI              &trans                   &kp SPACE                   &kp NB_N0  &trans     &trans     &none
+&kp TAB           &kp NB_EXCL          &kp NB_DQT           &kp NB_POUND          &kp NB_DOLLAR            &kp NB_PERCENT              &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans         &Hold_Tap_KP NB_PLUS NB_EQUAL  &kp DELETE
+&kp LEFT_SHIFT    &kp NB_AMPERSAND     &kp NB_SLASH         &kp NB_AT             &kp NB_LEFT_PARENTHESIS  &kp NB_RIGHT_PARENTHESIS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans         &kp NB_UMLAUT                  &kp NB_BSLH
+&kp NB_LESS_THAN  &kp NB_GREATER_THAN  &kp NB_LEFT_BRACKET  &kp NB_RIGHT_BRACKET  &kp NB_LEFT_BRACE        &kp NB_RIGHT_BRACE          &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp NB_PERIOD  &trans                         &kp NB_GRAVE
+                                       &none                &kp LGUI              &trans                   &kp SPACE                   &kp KP_N0  &trans     &trans     &none
             >;
         };
 
